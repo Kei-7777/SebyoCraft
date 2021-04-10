@@ -1,0 +1,79 @@
+#
+# 名前: 回数
+# 孕むまでの必要回数
+#
+kakikama: 50
+rosec_pin: 100
+urn1o: 100
+YOSHIKO__chan__: 30000
+23zi_51hun: 75
+suzuki2929: 120
+kikaru0014: 100
+dbk_huuka: 150
+ikeko_99: 100
+kono_a: 50
+_hinana_: 75
+tabi_meido: 100
+fakevox24: 100
+Nishito_31: 25
+imo64: 25
+tan_sio: 25
+
+users:
+  - kakikama
+  - rosec_pin
+  - urn1o
+  - YOSHIKO__chan__
+  - 23zi_51hun
+  - suzuki2929
+  - kikaru0014
+  - dbk_huuka
+  - ikeko_99
+  - kono_a
+  - _hinana_
+  - tabi_meido
+  - fakevox24
+  - Nishito_31
+  - imo64
+  - tan_sio
+
+settings:
+#
+# 生まれてこないエンティティ
+# EntityType.XXXのXXXの部分を記入
+# 内部実装がEntityType.values().clone()のため
+#
+  entities:
+    - ENDER_DRAGON
+    - DRAGON_FIREBALL
+    - ENDER_CRYSTAL
+
+#
+# 性病にかかる確率
+# X分の1の確率でかかる
+# 100の場合=1% (エンティティが生まれる処理の際に抽選)
+#
+  probability:
+    # クラミジア
+    chlamydia: 100
+    # 淋病
+    gonorrhea: 100
+    # 梅毒
+    syphilis: 100
+    # ヘルペス
+    herpes: 100
+
+#
+# 性病の効果が現れる確率
+# X分の1の確率でかかる
+# 100の場合=1% (0.1秒毎に抽選)
+#
+  run:
+    # クラミジア
+    chlamydia: 100
+    # 淋病
+    gonorrhea: 100
+    # 梅毒
+    syphilis: 100
+    # ヘルペス
+    herpes: 100
