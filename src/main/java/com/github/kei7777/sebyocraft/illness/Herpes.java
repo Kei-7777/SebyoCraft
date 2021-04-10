@@ -8,9 +8,7 @@ public class Herpes extends IllnessManager {
     @Override
     public void on(Player p) {
         //p.getLocation().getWorld().createExplosion(p.getLocation().getX(), p.getLocation().getY(), p.getLocation().getZ(), 3, false, false, p);
-        p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 20*5, 30, true, true, false));
         p.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 20*5, 30, true, true, false));
-        p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20*5, 0, true, true, false));
         p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 20*5, 4, true, false, false));
     }
 }

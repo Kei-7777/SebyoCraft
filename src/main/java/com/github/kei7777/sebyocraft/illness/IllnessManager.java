@@ -3,6 +3,7 @@ package com.github.kei7777.sebyocraft.illness;
 import com.github.kei7777.sebyocraft.SebyoCraft;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.*;
@@ -88,6 +89,13 @@ public abstract class IllnessManager {
                     int i = SebyoCraft.koko.getConfig().getInt(element + type.id);
                     if (new Random().nextInt(i) == 0) {
                         methods.get(type.id).on(Bukkit.getPlayer(entry.getKey()));
+                    }
+
+                    String element2 = "settings.effect.";
+                    for(String cmd : SebyoCraft.koko.getConfig().getStringList(element2+type.id)){
+                        if(Bukkit.getPlayer(entry.getKey()).isOnline() && Bukkit.getPlayer(entry.getKey()) != null) {
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.replaceAll("%player%", Bukkit.getPlayer(entry.getKey()).getName()));
+                        }
                     }
                 }
             }

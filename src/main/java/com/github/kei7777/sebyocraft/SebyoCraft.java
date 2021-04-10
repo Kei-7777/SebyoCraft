@@ -2,6 +2,7 @@ package com.github.kei7777.sebyocraft;
 
 import com.github.kei7777.sebyocraft.illness.*;
 import com.github.kei7777.sebyocraft.listener.*;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.*;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.*;

@@ -77,3 +77,23 @@ settings:
     syphilis: 100
     # ヘルペス
     herpes: 100
+
+#
+# 性病の効果を表すパーティクル
+# コンソールからコマンドを実行する
+# 毎tick実行
+# %player% < 対象プレイヤー
+#
+  effect:
+    # クラミジア
+    chlamydia:
+      - "execute at %player% run particle minecraft:falling_obsidian_tear ~ ~0.7 ~ 0.1 0 0.1 0.01 10 force"
+    # 淋病
+    gonorrhea:
+      - "execute at %player% run particle minecraft:emote_salt ~ ~0.7 ~ 0.1 0 0.1 0.01 10 force"
+    # 梅毒
+    syphilis:
+      - "execute at %player% run particle minecraft:item_slime ~ ~0.7 ~ 0 0 0 0.001 10 force"
+    # ヘルペス
+    herpes:
+      - "execute at %player% run particle minecraft:dripping_honey ~ ~0.6 ~ 0.1 0.1 0.1 0.01 10 force"
