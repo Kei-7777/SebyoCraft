@@ -67,11 +67,12 @@ public class ToggleSneakListener implements Listener {
                                 pl.playSound(p.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 1f, 1f);
                             }
 
+                            if(!rub){
+                                IllnessManager.mix(target, p);
+                                IllnessManager.check(target);
+                                IllnessManager.check(p);
+                            }
 
-
-                            IllnessManager.mix(target, p);
-                            IllnessManager.check(target);
-                            IllnessManager.check(p);
                         } else {
                             data.replace(target.getName(), o);
                         }
