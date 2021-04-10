@@ -3,6 +3,9 @@ package com.github.kei7777.sebyocraft;
 import com.github.kei7777.sebyocraft.illness.*;
 import com.github.kei7777.sebyocraft.listener.*;
 import org.bukkit.Bukkit;
+import org.bukkit.block.Block;
+import org.bukkit.block.CommandBlock;
+import org.bukkit.command.BlockCommandSender;
 import org.bukkit.entity.*;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.*;
@@ -14,6 +17,7 @@ public final class SebyoCraft extends JavaPlugin {
 
     public List<EntityType> mobs;
     public static SebyoCraft koko;
+    public static BlockCommandSender cb;
 
     @Override
     public void onEnable() {

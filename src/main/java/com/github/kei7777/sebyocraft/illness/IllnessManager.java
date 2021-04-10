@@ -3,8 +3,17 @@ package com.github.kei7777.sebyocraft.illness;
 import com.github.kei7777.sebyocraft.SebyoCraft;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Particle;
+import org.bukkit.Server;
+import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.permissions.Permission;
+import org.bukkit.permissions.PermissionAttachment;
+import org.bukkit.permissions.PermissionAttachmentInfo;
+import org.bukkit.plugin.Plugin;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -91,15 +100,21 @@ public abstract class IllnessManager {
                         methods.get(type.id).on(Bukkit.getPlayer(entry.getKey()));
                     }
 
-                    String element2 = "settings.effect.";
-                    for(String cmd : SebyoCraft.koko.getConfig().getStringList(element2+type.id)){
-                        if(Bukkit.getPlayer(entry.getKey()).isOnline() && Bukkit.getPlayer(entry.getKey()) != null) {
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd.replaceAll("%player%", Bukkit.getPlayer(entry.getKey()).getName()));
-                        }
+                    if(type == IllnessType.herpes){
+                        Player pp = Bukkit.getPlayer(entry.getKey());
+                        pp.getWorld().spawnParticle(Particle.DRIPPING_HONEY, pp.getLocation().clone().add(0,0.7,0), 10, 0.1, 0.1, 0.1, 0.01);
+                    } else if(type == IllnessType.gonorrhea){
+                        Player pp = Bukkit.getPlayer(entry.getKey());
+                        pp.getWorld().spawnParticle(Particle.END_ROD, pp.getLocation().clone().add(0,0.7,0), 10, 0.1, 0.1, 0.1, 0.01);
+                    } else if(type == IllnessType.chlamydia){
+                        Player pp = Bukkit.getPlayer(entry.getKey());
+                        pp.getWorld().spawnParticle(Particle.DRIPPING_OBSIDIAN_TEAR, pp.getLocation().clone().add(0,0.7,0), 10, 0.1, 0.1, 0.1, 0.01);
+                    } else if(type == IllnessType.syphilis){
+                        Player pp = Bukkit.getPlayer(entry.getKey());
+                        pp.getWorld().spawnParticle(Particle.SLIME, pp.getLocation().clone().add(0,0.7,0), 10, 0.1, 0.1, 0.1, 0.01);
                     }
                 }
             }
         }
     }
-
 }

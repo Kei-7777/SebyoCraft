@@ -14,6 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class MainCommandExecutor implements CommandExecutor, TabCompleter {
@@ -30,7 +31,7 @@ public class MainCommandExecutor implements CommandExecutor, TabCompleter {
         if(args.length < 1){
             sender.sendMessage(ChatColor.WHITE + "/sc debug アイテムを入手します");
             sender.sendMessage(ChatColor.WHITE + "/sc sick <player> <type> 強制的に性病になります");
-            sender.sendMessage(ChatColor.WHITE + "/sc clear <player> 完治させます");
+            sender.sendMessage(ChatColor.WHITE + "/sc cure <player> 完治させます");
             return true;
         }
 
@@ -138,6 +139,6 @@ public class MainCommandExecutor implements CommandExecutor, TabCompleter {
                 return l;
             }
         }
-        return null;
+        return Collections.singletonList("");
     }
 }
