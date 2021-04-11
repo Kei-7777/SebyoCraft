@@ -26,7 +26,7 @@ public class ToggleSneakListener implements Listener {
                 Player target = ((Player) entity);
                 boolean rub = (target.getInventory().getItemInMainHand().isSimilar(SebyoItemFactory.rub) || p.getInventory().getItemInMainHand().isSimilar(SebyoItemFactory.rub)); // コンドームの有無
                 for (Player pl : Bukkit.getOnlinePlayers()) {
-                    pl.playSound(p.getLocation(), Sound.ENTITY_CHICKEN_EGG, 1f, 1f);
+                    //pl.playSound(p.getLocation(), Sound.ENTITY_CHICKEN_EGG, 1f, 1f);
                 }
                 p.getLocation().getWorld().spawnParticle(Particle.HEART, p.getLocation().clone().add(0, 2.5, 0), 3);
                 p.getLocation().getWorld().spawnParticle(Particle.HEART, target.getLocation().clone().add(0, 2.5, 0), 3);

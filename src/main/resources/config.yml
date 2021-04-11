@@ -6,13 +6,13 @@ settings:
 #
   probability:
     # クラミジア
-    chlamydia: 1000
+    chlamydia: 100
     # 淋病
-    gonorrhea: 1000
+    gonorrhea: 100
     # 梅毒
-    syphilis: 1000
+    syphilis: 100
     # ヘルペス
-    herpes: 1000
+    herpes: 100
 
 #
 # 性病の効果が現れる確率
