@@ -15,15 +15,12 @@ import java.util.List;
 
 public final class SebyoCraft extends JavaPlugin {
 
-    public List<EntityType> mobs;
     public static SebyoCraft koko;
-    public static BlockCommandSender cb;
 
     @Override
     public void onEnable() {
         saveDefaultConfig();
         koko = this;
-        reload();
 
         SebyoItemFactory.start();
 
@@ -36,30 +33,11 @@ public final class SebyoCraft extends JavaPlugin {
 
         this.getCommand("sc").setExecutor(new MainCommandExecutor(this));
 
-        IllnessManager.reload();
+        IllnessManager.reg(IllnessType.chlamydia.id, new Chlamydia());
+        IllnessManager.reg(IllnessType.syphilis.id, new Syphilis());
+        IllnessManager.reg(IllnessType.gonorrhea.id, new Gonorrhea());
+        IllnessManager.reg(IllnessType.herpes.id, new Herpes());
+
         new IllnessRunTask().runTaskTimer(this, 2, 2);
-    }
-
-    @Override
-    public void onDisable() {
-    }
-
-    public void reload(){
-        mobs = new ArrayList<>();
-        for(EntityType t : EntityType.values()) {
-            boolean can = true;
-            for (String type : koko.getConfig().getStringList("settings.entities")) {
-                if(t == EntityType.valueOf(type)){
-                    can = false;
-                }
-            }
-            if(can) mobs.add(t);
-        }
-    }
-
-    public static void main(String[] args) {
-        //test
-        System.out.println(true ? "true" : "false");
-        System.out.println(false ? "true" : "false");
     }
 }

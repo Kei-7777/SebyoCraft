@@ -28,13 +28,6 @@ public abstract class IllnessManager {
         methods.put(id, clazz);
     }
 
-    public static void reload() {
-        reg(IllnessType.chlamydia.id, new Chlamydia());
-        reg(IllnessType.syphilis.id, new Syphilis());
-        reg(IllnessType.gonorrhea.id, new Gonorrhea());
-        reg(IllnessType.herpes.id, new Herpes());
-    }
-
     public static void cure(Player p, IllnessType t) {
         if (!sickplayers.containsKey(p.getUniqueId())) sickplayers.put(p.getUniqueId(), new ArrayList<>());
         sickplayers.get(p.getUniqueId()).remove(t);
@@ -100,18 +93,19 @@ public abstract class IllnessManager {
                         methods.get(type.id).on(Bukkit.getPlayer(entry.getKey()));
                     }
 
-                    if(type == IllnessType.herpes){
-                        Player pp = Bukkit.getPlayer(entry.getKey());
-                        pp.getWorld().spawnParticle(Particle.DRIPPING_HONEY, pp.getLocation().clone().add(0,0.7,0), 10, 0.1, 0.1, 0.1, 0.01);
-                    } else if(type == IllnessType.gonorrhea){
-                        Player pp = Bukkit.getPlayer(entry.getKey());
-                        pp.getWorld().spawnParticle(Particle.END_ROD, pp.getLocation().clone().add(0,0.7,0), 10, 0.1, 0.1, 0.1, 0.01);
-                    } else if(type == IllnessType.chlamydia){
-                        Player pp = Bukkit.getPlayer(entry.getKey());
-                        pp.getWorld().spawnParticle(Particle.DRIPPING_OBSIDIAN_TEAR, pp.getLocation().clone().add(0,0.7,0), 10, 0.1, 0.1, 0.1, 0.01);
-                    } else if(type == IllnessType.syphilis){
-                        Player pp = Bukkit.getPlayer(entry.getKey());
-                        pp.getWorld().spawnParticle(Particle.SLIME, pp.getLocation().clone().add(0,0.7,0), 10, 0.1, 0.1, 0.1, 0.01);
+                    Player pp = Bukkit.getPlayer(entry.getKey());
+                    try {
+                        if (type == IllnessType.herpes) {
+                            pp.getWorld().spawnParticle(Particle.DRIPPING_HONEY, pp.getLocation().clone().add(0, 0.7, 0), 10, 0.1, 0.1, 0.1, 0.01);
+                        } else if (type == IllnessType.gonorrhea) {
+                            pp.getWorld().spawnParticle(Particle.END_ROD, pp.getLocation().clone().add(0, 0.7, 0), 10, 0.1, 0.1, 0.1, 0.01);
+                        } else if (type == IllnessType.chlamydia) {
+                            pp.getWorld().spawnParticle(Particle.DRIPPING_OBSIDIAN_TEAR, pp.getLocation().clone().add(0, 0.7, 0), 10, 0.1, 0.1, 0.1, 0.01);
+                        } else if (type == IllnessType.syphilis) {
+                            pp.getWorld().spawnParticle(Particle.SLIME, pp.getLocation().clone().add(0, 0.7, 0), 10, 0.1, 0.1, 0.1, 0.01);
+                        }
+                    } catch (NullPointerException exp){
+                        // ぬるぽをつぶす
                     }
                 }
             }

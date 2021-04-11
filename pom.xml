@@ -6,7 +6,7 @@
 
     <groupId>com.github.kei7777</groupId>
     <artifactId>SebyoCraft</artifactId>
-    <version>0.21</version>
+    <version>0.3</version>
     <packaging>jar</packaging>
 
     <name>SebyoCraft</name>

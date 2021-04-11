@@ -45,8 +45,7 @@ public class ToggleSneakListener implements Listener {
                             p.getInventory().getItemInMainHand().setType(Material.AIR);
                         }
                     }
-                }
-                if (!rub) {
+                } else {
                     IllnessManager.mix(target, p);
                     IllnessManager.check(target);
                     IllnessManager.check(p);
