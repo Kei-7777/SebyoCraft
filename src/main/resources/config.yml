@@ -28,3 +28,18 @@ settings:
     syphilis: 100
     # ヘルペス
     herpes: 100
+
+#
+# パーティクルの数
+# 1tick毎、1度に表示するパーティクルの数
+# 初期値:5
+#
+  particle:
+    # クラミジア
+    chlamydia: 5
+    # 淋病
+    gonorrhea: 5
+    # 梅毒
+    syphilis: 5
+    # ヘルペス
+    herpes: 5

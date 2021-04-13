@@ -94,15 +94,16 @@ public abstract class IllnessManager {
                     }
 
                     Player pp = Bukkit.getPlayer(entry.getKey());
+                    String element2 = "settings.particle.";
                     try {
                         if (type == IllnessType.herpes) {
-                            pp.getWorld().spawnParticle(Particle.DRIPPING_HONEY, pp.getLocation().clone().add(0, 0.7, 0), 10, 0.1, 0.1, 0.1, 0.01);
+                            pp.getWorld().spawnParticle(Particle.DRIPPING_HONEY, pp.getLocation().clone().add(0, 0.7, 0), SebyoCraft.koko.getConfig().getInt(element2 + type.id), 0.1, 0.1, 0.1, 0.01);
                         } else if (type == IllnessType.gonorrhea) {
-                            pp.getWorld().spawnParticle(Particle.END_ROD, pp.getLocation().clone().add(0, 0.7, 0), 10, 0.1, 0.1, 0.1, 0.01);
+                            pp.getWorld().spawnParticle(Particle.END_ROD, pp.getLocation().clone().add(0, 0.7, 0), SebyoCraft.koko.getConfig().getInt(element2 + type.id), 0.1, 0.1, 0.1, 0.01);
                         } else if (type == IllnessType.chlamydia) {
-                            pp.getWorld().spawnParticle(Particle.DRIPPING_OBSIDIAN_TEAR, pp.getLocation().clone().add(0, 0.7, 0), 10, 0.1, 0.1, 0.1, 0.01);
+                            pp.getWorld().spawnParticle(Particle.DRIPPING_OBSIDIAN_TEAR, pp.getLocation().clone().add(0, 0.7, 0), SebyoCraft.koko.getConfig().getInt(element2 + type.id), 0.1, 0.1, 0.1, 0.01);
                         } else if (type == IllnessType.syphilis) {
-                            pp.getWorld().spawnParticle(Particle.SLIME, pp.getLocation().clone().add(0, 0.7, 0), 10, 0.1, 0.1, 0.1, 0.01);
+                            pp.getWorld().spawnParticle(Particle.SLIME, pp.getLocation().clone().add(0, 0.7, 0), SebyoCraft.koko.getConfig().getInt(element2 + type.id), 0.1, 0.1, 0.1, 0.01);
                         }
                     } catch (NullPointerException exp){
                         // ぬるぽをつぶす
